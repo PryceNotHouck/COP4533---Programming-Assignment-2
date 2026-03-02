@@ -9,7 +9,7 @@ sample = """5 10
 
 s_cache, s_inputs = formatter(sample)
 blank_cache1 = copy.deepcopy(s_cache)
-blank_cache2 = copy.deepcopy(s_inputs)
+blank_cache2 = copy.deepcopy(s_cache)
 
 print(f"FIFO  : {fifo(s_cache, s_inputs)[1]}")
 print(f"LRU   : {lru(blank_cache1, s_inputs)[1]}")
