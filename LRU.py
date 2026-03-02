@@ -12,13 +12,14 @@ def lru(cache, inputs_arr):
         input = inputs.popleft()
         if int(input) in cache:
             hits += 1
+            age[input] = 0
         else:
             misses += 1
             try:
                 empty_i = cache.index(float('inf'))
                 cache[empty_i] = int(input)
                 age[input] = 0
-            except ValueError:
+            except ValueError:  # no empty spot in cache
                 oldest = max(age.items(), key = lambda item: item[1])
                 evict_i = cache.index(int(oldest[0]))
                 cache[evict_i] = int(input)
