@@ -12,5 +12,5 @@ blank_cache1 = copy.deepcopy(s_cache)
 blank_cache2 = copy.deepcopy(s_inputs)
 
 print(f"FIFO  : {fifo(s_cache, s_inputs)[1]}")
-print(f"LRU   : {fifo(blank_cache1, s_inputs)[1]}")
-print(f"OPTFF : {fifo(blank_cache2, s_inputs)[1]}")
+print(f"LRU   : {lru(blank_cache1, s_inputs)[1]}")
+print(f"OPTFF : {optff(blank_cache2, s_inputs)[1]}")

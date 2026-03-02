@@ -8,6 +8,31 @@ def optff(cache, inputs_arr):
 
     while len(inputs):
         input = inputs.popleft()
+        if int(input) in cache:
+            hits += 1
+        else:
+            misses += 1
+            try:
+                empty_i = cache.index(float('inf'))
+                cache[empty_i] = int(input)
+            except ValueError:
+                distances = []  # (id, distance)
+                for id in cache:
+                    if id != float('inf'):
+                        requested = False
+                        distance = 0
+                        for request in inputs:
+                            distance += 1
+                            if request == id:
+                                requested = True
+                                distances.append((id, distance))
+                                break
+                        if not requested:
+                            distances.append((id, float('inf')))
+
+                evict = max(distances, key = lambda x: x[1])[0]
+                evict_i = cache.index(evict)
+                cache[evict_i] = int(input)
 
     return hits, misses
 
