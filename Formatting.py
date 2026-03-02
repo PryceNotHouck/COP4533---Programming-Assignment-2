@@ -18,8 +18,9 @@ def formatter(to_format):
         cache.append(float('inf'))
 
     input_size_i = to_format.find('\n')
+    #input_size = int(to_format[:input_size_i])
     ids = to_format[input_size_i + 1:]
-    input_ids = ids.split()
+    input_ids = ids.split() # change this to accept id's in a for loop up to input size
 
     return cache, input_ids
 
