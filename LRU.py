@@ -14,23 +14,14 @@ def lru(cache, inputs_arr):
             hits += 1
         else:
             misses += 1
-            assigned = False
-            for i in range(0, len(cache)):
-                if cache[i] == float('inf'):
-                    cache[i] = int(input)
-                    age[input] = 0
-                    assigned = True
-                    break
-            if not assigned:
-                oldest = (-1, 0)
-                for id in age.keys():
-                    if age[id] >= oldest[1]:
-                        oldest = (id, age[id])
-                for i in range(0, len(cache) - 1):
-                    if cache[i] == int(oldest[0]):
-                        cache[i] = int(input)
-                        age[input] = 0
-                        break
+            try:
+                empty_i = cache.index(float('inf'))
+                cache[empty_i] = int(input)
+                age[input] = 0
+            except ValueError:
+                oldest = max(age.items(), key = lambda item: item[1])
+                evict_i = cache.index(int(oldest[0]))
+                cache[evict_i] = int(input)
                 del age[oldest[0]]
 
         for id in age.keys():
