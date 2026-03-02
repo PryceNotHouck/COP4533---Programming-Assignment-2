@@ -34,8 +34,7 @@ def fifo(cache, inputs_arr):
 
 if __name__ == "__main__":
     sample = """5 10
-    1253 120938 1029383 38102938 838428 3512 1253 120938 1029383 38102938
-    """
+    1253 120938 1029383 38102938 838428 3512 1253 120938 1029383 38102938"""
 
     ex_cache, ex_inputs = formatter(sample)
     hits, misses = fifo(ex_cache, ex_inputs)
