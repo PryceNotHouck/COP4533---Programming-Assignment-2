@@ -13,11 +13,12 @@ def generator(path, n_requests, temperature):
         for i in range(temperature):
             requests.append(id)
 
-        for i in range(n_requests):
+        for i in range(n_requests - temperature):
             id = random.randint(100000, 999999)
             requests.append(id)
 
         random.shuffle(requests)
+        #print(len(requests))
         for req in requests:
             output += f"{req} "
         output = output[:-1]  # remove last whitespace character

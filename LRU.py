@@ -22,6 +22,7 @@ def lru(cache, inputs_arr):
                 oldest = max(age.items(), key = lambda item: item[1])
                 evict_i = cache.index(int(oldest[0]))
                 cache[evict_i] = int(input)
+                age[input] = 0
                 del age[oldest[0]]
 
         for id in age.keys():
