@@ -1,5 +1,4 @@
 import collections
-
 from Formatting import formatter
 
 def lru(cache, inputs_arr):
