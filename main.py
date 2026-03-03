@@ -19,7 +19,7 @@ for path in input_paths:
         blank_cache1 = copy.deepcopy(s_cache)
         blank_cache2 = copy.deepcopy(s_cache)
 
-        print(f"FIFO  : {fifo(s_cache, s_inputs)[0]} hits, {fifo(s_cache, s_inputs)[1]} misses")
-        print(f"LRU   : {lru(s_cache, s_inputs)[0]} hits, {lru(blank_cache1, s_inputs)[1]} misses")
-        print(f"OPTFF : {optff(s_cache, s_inputs)[0]} hits, {optff(blank_cache2, s_inputs)[1]} misses")
+        print(f"FIFO  : {fifo(s_cache, s_inputs)[1]}")
+        print(f"LRU   : {lru(blank_cache1, s_inputs)[1]}")
+        print(f"OPTFF : {optff(blank_cache2, s_inputs)[1]}")
     print(f"\n{'*' * 20}\n")

@@ -23,7 +23,7 @@ def optff(cache, inputs_arr):
                         distance = 0
                         for request in inputs:
                             distance += 1
-                            if request == id:
+                            if int(request) == id:
                                 requested = True
                                 distances.append((id, distance))
                                 break
