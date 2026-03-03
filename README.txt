@@ -1,3 +1,3 @@
-Programming Assignment 2 - Cahe Eviction Policies
+Programming Assignment 2 - Cache Eviction Policies
 
 Pryce Houck, Trevor DeBored
