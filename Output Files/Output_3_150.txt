@@ -1,0 +1,3 @@
+FIFO  : 103
+LRU   : 92
+OPTFF : 80
