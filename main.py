@@ -11,7 +11,7 @@ input_paths = [
 ]
 
 for input_path in input_paths:
-    print(input_path, ":")
+    print(f"{input_path}:")
     with open(input_path, "r") as file:
         sample = file.read()
 
