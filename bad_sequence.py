@@ -49,6 +49,7 @@ def bad_sequence():
         else:
             attempt_count += 1
             print("Failure\n")
+    return None
 
 
 if __name__ == "__main__":
