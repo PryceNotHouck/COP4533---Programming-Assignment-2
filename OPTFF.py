@@ -18,7 +18,7 @@ def optff(cache, inputs_arr):
             except ValueError:
                 distances = []  # (id, distance)
                 for id in cache:
-                    if id != float('inf'):
+                    if id != float('inf'):  # i just realized this is redundant but i kind of want to leave it in. little artifact to show that this code is hand written
                         requested = False
                         distance = 0
                         for request in inputs:
