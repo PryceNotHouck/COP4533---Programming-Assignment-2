@@ -18,3 +18,14 @@ OPTFF : 37
 
 ### Question 3: Prove OPTFF is Optimal
 [PROOF\]
+
+ Let S be a reduced schedule that makes the same eviction decisions as $S_{FF}$ through the first j items in the sequence, for a number j. Then there is a reduced schedule $S'$ that makes the same eviction decisions as $S_{FF}$ through the first j + 1 items, and incurs no more misses than S does.
+
+- Suppose $S$ and $S_{FF}$ have identical cache contents up to step $j + 1$.
+- Consider the first time that $S$ and $S_{FF}$ diverge in behavior, say at step $j + 2$, where $S$ evicts the element $n_{\text{soon}}$ and $S_{FF}$ evicts the element $n_{\text{far}}$.
+- Perform an exchange such that the modified schedule $S'$ evicts $n_{\text{far}}$ instead to resemble the behavior of $S_{FF}$. This gives rise to two cases:
+	- Case 1: $n_{\text{soon}}$ is not requested before $n_{\text{far}}$
+		- Then $S'$ has at most as many misses as $S$ because $n_{\text{soon}}$ stays in the cache for longer.
+	- Case 2: $n_{\text{soon}}$ is requested before $n_{\text{far}}$
+		- Then $S$ would have missed $n_{\text{soon}}$ sooner since $S'$ would still have it in the cache at that point. $S'$ may eventually need to bring $n_{\text{far}}$ back into the cache, so $S'$ would have at most as many misses as $S$.
+- By both of these cases, $S' = S_{FF}$ will never incur more misses than any other schedule $S$, and is thus optimal.
