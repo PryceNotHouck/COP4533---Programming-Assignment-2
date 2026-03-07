@@ -11,6 +11,9 @@ python 3.11 environment; assumes 'numpy' by pip
 | Input_2_100 | 10 | 100 | 74 | 66 | 55 |
 | Input_3_150 | 12 | 150 | 103 | 92 | 80 |
 
+OPTFF has the fewest misses for all input sizes. FIFO consistently performs worse than LRU, increasingly so with input size.
+
+
 ### Question 2: Bad Sequence for LRU or FIFO
 FIFO  : 43  
 LRU   : 43  
