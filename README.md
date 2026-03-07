@@ -2,6 +2,8 @@
 ###### Pryce Houck, Trevor DeBored
 remove __pycache__ if you're having issue compiling
 
+python 3.11 environment; assumes 'numpy' by pip
+
 ### Question 1: Empirical Comparison
 | Input File | k | m | FIFO | LRU | OPTFF |
 |---|---|---|---|---|---|
